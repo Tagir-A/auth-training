@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <title>Auth training</title>
+
+    <!-- GOOGLE SIGN-IN -->
+    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+    <meta name="google-signin-client_id" content="152960529580-qekpga18g9hmuc4i037gvluij0flts8l.apps.googleusercontent.com">
+</head>
+
+<body>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <a href="#" onclick="signOut();">Sign out</a>
+    <script>
+        function init() {
+          console.log('init')
+            // gapi.auth2.init({
+            //     client_id: 'CLIENT_ID.apps.googleusercontent.com'
+            // })
+        }
+        function onSignIn() {
+          console.log('signed')
+          const auth2 = gapi.auth2.getAuthInstance()
+          var profile = auth2.currentUser.get().getBasicProfile();
+          console.log('Full Name: ' + profile.getName());
+        }
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
+    </script>
+</body>
+
+</html>

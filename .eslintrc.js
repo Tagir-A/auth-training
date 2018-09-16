@@ -1,4 +1,7 @@
 module.exports = {
     "extends": "google",
-    "plugins": ["prettier"]
+    "plugins": ["prettier"],
+    "rules": {
+        "comma-dangle": ["error", "always-multiline"]
+    }
 };
