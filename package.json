@@ -1,0 +1,23 @@
+{
+  "name": "authtraining",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config webpack.config.js",
+    "lint-init": "eslint --init",
+    "lint": "eslint ./src",
+    "prettify": "prettier ./src/index.js"
+  },
+  "author": "tagir-a",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-config-google": "^0.10.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "prettier": "1.14.2",
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0"
+  }
+}
